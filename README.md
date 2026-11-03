@@ -1,4 +1,11 @@
-# 사과게임 (Apple Game)
+# Apple Game (사과게임)
+**A mobile number puzzle — drag a box over apples that add up to exactly 10.**
+
+- Play: https://sylvie-kim.github.io/apple-game/
+- Built with Next.js + TypeScript — designed and built with AI coding agents
+- Auto-deployed to GitHub Pages by GitHub Actions on every push to `main`
+
+---
 
 직사각형을 드래그해서, 그 안 사과 숫자의 합이 **정확히 10**이면 사과가 사라지는 모바일 퍼즐게임.
 
@@ -11,7 +18,6 @@
 ## 실행
 
 ```bash
-cd projects/apple-game
 npm install
 npm run dev
 ```
@@ -44,34 +50,13 @@ lib/         board(판 생성) · selection(좌표→격자) · solver(누적합
 
 `main` 에 push 하면 GitHub Actions 가 정적 빌드(`output: 'export'`)해서 GitHub Pages 로 올린다.
 
-- 공개 주소: https://sylvie0810.github.io/apple-game/
+- 공개 주소: https://sylvie-kim.github.io/apple-game/
 - 워크플로: `.github/workflows/deploy.yml`
 - 하위 경로 대응: 빌드 때 `NEXT_PUBLIC_BASE_PATH=/<저장소이름>` 을 넘긴다
-
-### 소스는 여기, 공개는 저기
-
-이 수업 저장소는 **비공개**라 Pages 를 켤 수 없다. 그래서 게임 폴더만 공개 저장소
-`Sylvie0810/apple-game` 로 밀어 올린다. 코드의 정본은 계속 이 폴더다.
-
-수정한 뒤 배포를 갱신하려면 **저장소 루트에서**:
-
-```bash
-git subtree push --prefix=projects/apple-game pages main
-```
-
-`pages` 리모트가 없으면 한 번만:
-
-```bash
-git remote add pages https://github.com/Sylvie0810/apple-game.git
-```
 
 로컬에서 배포본과 똑같이 확인하려면:
 
 ```bash
 NEXT_PUBLIC_BASE_PATH=/apple-game npm run build
-npx serve out   # 또는 out 을 apple-game 이라는 폴더로 두고 정적 서버 실행
+npx serve out
 ```
-
-## 기획서
-
-[사과게임 모바일 MVP PRD](../../docs/plans/20260902_apple-game_prd_mobile-mvp.md)
